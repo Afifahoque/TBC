@@ -43,6 +43,121 @@
     .network-track { animation: network-scroll 22s linear infinite; width: max-content; }
     .network-marquee:hover .network-track { animation-play-state: paused; }
     @keyframes network-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .visa-stack {
+      position: relative;
+      width: min(100%, 54rem);
+      height: 30rem;
+      margin: 0 auto;
+      padding: 1.2rem 0;
+      --offset-steps: 5.6rem;
+      --scale-steps: 25;
+      --opacity-steps: 15;
+      --offset-steps-two: calc(var(--offset-steps) * -1);
+      --offset-steps-three: calc(var(--offset-steps) * -2);
+      --scale-steps-two: calc(1 - var(--scale-steps) * 0.01);
+      --scale-steps-three: calc(1 - var(--scale-steps) * 0.02);
+      --opacity-steps-two: calc(1 - var(--opacity-steps) * 0.02);
+      --opacity-steps-three: calc(1 - var(--opacity-steps) * 0.04);
+    }
+    .visa-stack .visa-card {
+      position: absolute;
+      inset: 1.2rem 2rem 0.2rem 2rem;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,.28);
+      border-radius: 1.5rem;
+      box-shadow: 0 24px 60px rgba(15,23,42,.08);
+      opacity: 0;
+      transform: translateY(var(--offset-steps)) scale(.92);
+      transition: all .6s ease;
+      pointer-events: none;
+      background: white;
+    }
+    .visa-stack .visa-card.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      z-index: 3;
+    }
+    .visa-stack .visa-card.prev {
+      opacity: .68;
+      transform: translateY(calc(var(--offset-steps) * -0.7)) scale(.96);
+      z-index: 2;
+    }
+    .visa-stack .visa-card.next {
+      opacity: .42;
+      transform: translateY(var(--offset-steps)) scale(.9);
+      z-index: 1;
+    }
+    .visa-card-image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .visa-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,.08), rgba(15,23,42,.5));
+      z-index: 1;
+    }
+    .visa-card-label {
+      position: absolute;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.1rem;
+      z-index: 2;
+      display: inline-flex;
+      width: fit-content;
+      max-width: 76%;
+      align-items: center;
+      border-radius: 9999px;
+      background: rgba(212,175,55,.16);
+      border: 1px solid rgba(212,175,55,.5);
+      color: #f5dc7c;
+      padding: .55rem .9rem;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 0 1px rgba(212,175,55,.12);
+    }
+
+    .visa-card-1 { --bg-clr: rgba(212,175,55,.18); --order: var(--v1-order); --scale: var(--v1-scale); --opacity: var(--v1-opacity); --offset: var(--v1-offset); }
+    .visa-card-2 { --bg-clr: rgba(197,160,89,.18); --order: var(--v2-order); --scale: var(--v2-scale); --opacity: var(--v2-opacity); --offset: var(--v2-offset); }
+    .visa-card-3 { --bg-clr: rgba(17,24,39,.06); --order: var(--v3-order); --scale: var(--v3-scale); --opacity: var(--v3-opacity); --offset: var(--v3-offset); }
+
+    .visa-stack:has(input:nth-child(1):checked) .visa-card-1 {
+      --v1-order: 3; --v1-scale: 1; --v1-opacity: 1; --v1-offset: 0;
+      --v2-order: 2; --v2-scale: var(--scale-steps-two); --v2-opacity: var(--opacity-steps-two); --v2-offset: var(--offset-steps-two);
+      --v3-order: 1; --v3-scale: var(--scale-steps-three); --v3-opacity: var(--opacity-steps-three); --v3-offset: var(--offset-steps-three);
+    }
+    .visa-stack:has(input:nth-child(2):checked) .visa-card-2 {
+      --v2-order: 3; --v2-scale: 1; --v2-opacity: 1; --v2-offset: 0;
+      --v1-order: 1; --v1-scale: var(--scale-steps-three); --v1-opacity: var(--opacity-steps-three); --v1-offset: var(--offset-steps-three);
+      --v3-order: 2; --v3-scale: var(--scale-steps-two); --v3-opacity: var(--opacity-steps-two); --v3-offset: var(--offset-steps-two);
+    }
+    .visa-stack:has(input:nth-child(3):checked) .visa-card-3 {
+      --v3-order: 3; --v3-scale: 1; --v3-opacity: 1; --v3-offset: 0;
+      --v1-order: 2; --v1-scale: var(--scale-steps-two); --v1-opacity: var(--opacity-steps-two); --v1-offset: var(--offset-steps-two);
+      --v2-order: 1; --v2-scale: var(--scale-steps-three); --v2-opacity: var(--opacity-steps-three); --v2-offset: var(--offset-steps-three);
+    }
+    @media (max-width: 700px) {
+      .visa-stack { height: auto; display: grid; gap: 1rem; }
+      .visa-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 28rem;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+      .visa-card-image { min-height: 12rem; }
+    }
     body { background: #ffffff; color: #0f172a; }
     header { background: rgba(255,255,255,.9) !important; border-color: #e2e8f0 !important; }
     header .text-slate-300, header .text-slate-400 { color: #475569 !important; }
@@ -82,9 +197,10 @@
       <div class="absolute -left-32 top-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl"></div><div class="absolute right-0 top-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
       <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[1.12fr_.88fr] lg:px-8">
         <div class="reveal"><div class="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[.18em] text-gold"><span class="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_10px_#D4AF37]"></span> Romania · Europe · Asia</div>
-          <h1 class="max-w-3xl font-display text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.5rem]">Workforce without <span class="gold-text">borders.</span></h1>
+          <h1 class="max-w-3xl font-display text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.5rem]">Workforce Without <span class="gold-text">Borders.</span></h1>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">Bridging top-tier Asian skilled labor with growing European industries. Structured, compliant, and ethical international workforce coordination for European enterprises.</p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row"><a href="https://calendly.com/talentbridgeconsultancy/discovery-call" target="_blank" rel="noopener" class="rounded-full gold-gradient px-6 py-3.5 text-center font-semibold text-ink transition hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/20">Book a Discovery Call <span aria-hidden="true">↗</span></a><a href="#contact" class="rounded-full border border-slate-400 px-6 py-3.5 text-center font-semibold text-slate-700 transition hover:border-gold hover:text-gold">Request Skilled Workforce</a></div>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-slate-500">From construction and food processing to textiles and agriculture, we help employers source, prepare, and deploy the right workforce with confidence.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row"><a href="https://meet.google.com/nqq-yqji-ccw" target="_blank" rel="noopener" class="rounded-full gold-gradient px-6 py-3.5 text-center font-semibold text-ink transition hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/20">Book a Discovery Call <span aria-hidden="true">↗</span></a><a href="#contact" class="rounded-full border border-slate-400 px-6 py-3.5 text-center font-semibold text-slate-700 transition hover:border-gold hover:text-gold">Request Skilled Workforce</a></div>
           <p class="mt-10 flex items-center gap-2 text-sm text-slate-500"><span class="text-gold">✦</span> Bridging the Gap Between Dreams and Opportunities</p>
         </div>
         <div class="reveal relative"><div class="absolute -inset-4 rounded-[2rem] bg-gold/10 blur-2xl"></div><div class="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-3 shadow-2xl"><div id="field-carousel" class="relative h-[390px]"><div class="field-slide photo photo-one absolute inset-0 flex active flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · BUCHAREST</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">The right people move industries forward.</p></div><div class="field-slide photo photo-two absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · Employment</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Strong teams build stronger communities.</p></div><div class="field-slide photo photo-three absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · Workforce</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Every successful journey starts with trust.</p></div><div class="field-slide photo photo-four absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · EMPOWERMENT</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Opportunity travels further together.</p></div></div><div class="flex items-center justify-between px-2 pt-4 text-xs text-slate-400"><span>Verified deployment network</span><span id="field-counter" class="text-gold">01 / 04</span></div></div></div>
@@ -102,8 +218,12 @@
 
     <section id="stories" class="bg-[#111827] py-24 lg:py-32"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Proof of work</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">When people move, <span class="gold-text">possibility follows.</span></h2></div><p class="max-w-xs text-sm leading-6 text-slate-400">Real partnerships. Measurable outcomes. A human approach to every deployment.</p></div>
       <div class="grid gap-5 lg:grid-cols-3"><article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-one h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Textile & apparel</p><h3 class="mt-3 text-xl font-semibold">Sonoma Sportswear SRL</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Severe skilled labor shortage in apparel production.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> Qualified garment technicians deployed with high retention and worker-safety compliance.</p></div></article>
-      <article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-two h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Construction & heavy industry</p><h3 class="mt-3 text-xl font-semibold">Ithaki Group SRL</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Reliable, pre-screened labor for large-scale projects.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> Managed channels and structured onboarding reduced deployment lead time.</p></div></article>
+      <article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-two h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Manufacturing & heavy industry</p><h3 class="mt-3 text-xl font-semibold">Ithaki Group SRL</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Reliable, pre-screened labor for large-scale projects.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> Managed channels and structured onboarding reduced deployment lead time.</p></div></article>
       <article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-three h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Mobility & compliance</p><h3 class="mt-3 text-xl font-semibold">Beyond the paperwork</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Complex visa logistics for multi-sector teams.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> 100% compliant processing with verified arrival and post-deployment support.</p></div></article></div>
+    </div></section>
+
+    <section class="bg-[#f8fafc] py-24 lg:py-32"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal mb-12 max-w-2xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Visa processing</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Glimpse of our <span class="gold-text">Deployed Workforce</span></h2></div>
+      <div class="visa-stack reveal" id="visa-stack"></div>
     </div></section>
 
     <section class="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div class="reveal mb-10"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Where we make an impact</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Built for the industries <span class="text-slate-400">building tomorrow.</span></h2></div><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">⌂</span><h3 class="mt-10 font-semibold">Construction & Infrastructure</h3><p class="mt-2 text-sm text-slate-400">Skilled hands for ambitious builds.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">♧</span><h3 class="mt-10 font-semibold">Agriculture & Farming</h3><p class="mt-2 text-sm text-slate-400">Reliable teams for every season.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">◈</span><h3 class="mt-10 font-semibold">Food Processing</h3><p class="mt-2 text-sm text-slate-400">Quality-minded production talent.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">▥</span><h3 class="mt-10 font-semibold">Textile & Garment</h3><p class="mt-2 text-sm text-slate-400">Craftsmanship that scales.</p></div></div></section>
@@ -115,7 +235,7 @@
     </section>
   </main>
   <a href="https://wa.me/40752329745?text=Hello%20TalentBridge%20Consultancy%2C%20I%27d%20like%20to%20learn%20more." target="_blank" rel="noopener" aria-label="Chat with TalentBridge Consultancy on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:bg-[#20bd5a]"><span class="text-lg">◉</span> WhatsApp us</a>
-  <footer id="site-footer" class="border-t border-white/10 bg-[#070a12]"><div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-9 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div><p class="font-display text-base font-semibold text-slate-200">Talent<span class="text-gold">Bridge</span> Consultancy</p><p class="mt-1">Bridging the Gap Between Dreams and Opportunities.</p></div><div class="sm:text-right"><a class="block text-slate-300 transition hover:text-gold" href="mailto:contact@talentbridgeconsultancy.net">contact@talentbridgeconsultancy.net</a><a class="mt-1 block text-slate-300 transition hover:text-[#25D366]" href="https://wa.me/40752329745" target="_blank" rel="noopener">WhatsApp: +40 752 329 745</a><p class="mt-1">Romania · © 2024 TalentBridge Consultancy</p><p class="mt-1 text-xs">Consultancy and advisory services only. Not a legal or immigration authority.</p></div></div></footer>
+  <footer id="site-footer" class="border-t border-white/10 bg-[#070a12]"><div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-9 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div><p class="font-display text-base font-semibold text-slate-200">Talent<span class="text-gold">Bridge</span> Consultancy</p><p class="mt-1">Bridging the Gap Between Dreams and Opportunities.</p></div><div class="sm:text-right"><a class="block text-slate-300 transition hover:text-gold" href="mailto:contact@talentbridgeconsultancy.net">contact@talentbridgeconsultancy.net</a><a class="mt-1 block text-slate-300 transition hover:text-[#25D366]" href="https://wa.me/40752329745" target="_blank" rel="noopener">WhatsApp: +40 752 329 745</a><p class="mt-1">Romania · © 2026 TalentBridge Consultancy</p><p class="mt-1 text-xs">Consultancy and advisory services only. Not a legal or immigration authority.</p></div></div></footer>
   <script>
     const menuToggle = document.getElementById('menu-toggle'), mobileMenu = document.getElementById('mobile-menu');
     menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -144,6 +264,55 @@
     }));
     const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const visaGallery = [
+      { src: 'visa/visa-1.jpg' },
+      { src: 'visa/visa-2.jpg' },
+      { src: 'visa/visa-3.jpg' },
+      { src: 'visa/visa-4.jpg' },
+      { src: 'visa/visa-5.jpg' },
+      { src: 'visa/visa-6.jpg' },
+      { src: 'visa/visa-7.jpg' },
+      { src: 'visa/visa-8.jpg' },
+      { src: 'visa/visa-9.jpg' }
+    
+    ];
+    const visaStack = document.getElementById('visa-stack');
+    if (visaStack) {
+      visaGallery.forEach((item, index) => {
+        const card = document.createElement('article');
+        card.className = 'visa-card' + (index === 0 ? ' active' : '');
+
+        const image = document.createElement('div');
+        image.className = 'visa-card-image';
+        image.style.backgroundImage = `url('${item.src}')`;
+
+        const label = document.createElement('span');
+        label.className = 'visa-card-label';
+        label.textContent = item.label;
+
+        card.appendChild(image);
+        card.appendChild(label);
+        visaStack.appendChild(card);
+      });
+
+      let visaIndex = 0;
+      const rotateVisaCards = () => {
+        const cards = [...visaStack.querySelectorAll('.visa-card')];
+        cards.forEach((card, idx) => {
+          card.classList.remove('active', 'prev', 'next');
+          const diff = (idx - visaIndex + cards.length) % cards.length;
+          if (diff === 0) card.classList.add('active');
+          else if (diff === 1 || diff === cards.length - 1) card.classList.add('prev');
+          else card.classList.add('next');
+        });
+        visaIndex = (visaIndex + 1) % cards.length;
+      };
+
+      rotateVisaCards();
+      setInterval(rotateVisaCards, 3400);
+    }
+
     const whatsappButton = document.querySelector('a[aria-label*="WhatsApp"]');
     const footerObserver = new IntersectionObserver(([entry]) => {
       whatsappButton.classList.toggle('hidden', entry.isIntersecting);

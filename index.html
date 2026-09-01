@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TalentBridge Consultancy connects skilled Asian professionals with growing European industries through ethical, compliant workforce mobility.">
+  <title>TalentBridge Consultancy | Workforce Without Borders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: '#0F172A', midnight: '#090d19', gold: '#D4AF37', champagne: '#C5A059', mist: '#F4F1EA' },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'], display: ['DM Sans', 'Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #090d19; color: #f8fafc; }
+    .grid-bg { background-image: linear-gradient(rgba(212,175,55,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,.055) 1px, transparent 1px); background-size: 64px 64px; }
+    .gold-gradient { background: linear-gradient(120deg, #f0d36c, #b78d24); }
+    .gold-text { background: linear-gradient(120deg, #f5dc7c, #c5a059); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .glass { background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(14px); }
+    .glow { box-shadow: 0 0 0 1px rgba(212,175,55,.24), 0 16px 60px rgba(212,175,55,.09); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .icon-box { background: rgba(212,175,55,.11); border: 1px solid rgba(212,175,55,.3); }
+    .photo { background-size: cover; background-position: center; }
+    .photo-one { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('carosul_1.jpeg'); }
+    .photo-two { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('Carosul_2.jpeg'); }
+    .photo-three { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('carosul_3.jpg'); }
+    .photo-four { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('carosul_4.jpg'); }
+    .story-one { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('workenv11.jpeg'); }
+    .story-two { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('bdtoro5.jpg'); }
+    .story-three { background-image: linear-gradient(180deg, transparent, rgba(5,8,17,.72)), url('fa3.jpg'); }
+    .field-slide { opacity: 0; transition: opacity .8s ease; pointer-events: none; }
+    .field-slide.active { opacity: 1; pointer-events: auto; }
+    .network-track { animation: network-scroll 22s linear infinite; width: max-content; }
+    .network-marquee:hover .network-track { animation-play-state: paused; }
+    @keyframes network-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    body { background: #ffffff; color: #0f172a; }
+    header { background: rgba(255,255,255,.9) !important; border-color: #e2e8f0 !important; }
+    header .text-slate-300, header .text-slate-400 { color: #475569 !important; }
+    #top { background-color: #ffffff; }
+    #stories, #about { background: #f8fafc !important; border-color: #e2e8f0 !important; color: #0f172a; }
+    #stories .bg-\[\#182233\] { background: #ffffff !important; border-color: #e2e8f0 !important; }
+    #stories .text-white, #about .text-white { color: #0f172a !important; }
+    #stories .text-slate-400, #about .text-slate-400 { color: #64748b !important; }
+    .glass { background: #ffffff; border-color: #e2e8f0; color: #0f172a; }
+    .glass .text-slate-400 { color: #64748b !important; }
+    footer { background: #f8fafc !important; border-color: #e2e8f0 !important; }
+    footer .text-slate-200 { color: #0f172a !important; }
+    footer .text-slate-300 { color: #475569 !important; }
+    #contact label { color: #123b67 !important; }
+    #contact .tab-btn { color: #123b67; }
+    #stories article p.text-slate-400 { color: #123b67 !important; }
+    #stories article b.text-slate-200 { color: #123b67 !important; }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#090d19]/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#top" class="flex items-center gap-3" aria-label="TalentBridge Consultancy home">
+        <img src="logo.png" alt="TalentBridge Consultancy" class="h-14 w-auto max-w-[190px] object-contain">
+        <span class="hidden border-l border-slate-200 pl-3 font-display text-sm font-semibold leading-5 text-[#123b67] sm:block">TalentBridge<br><span class="text-xs font-medium uppercase tracking-[.16em] text-[#315b85]">Consultancy</span></span>
+      </a>
+      <div id="nav-links" class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+        <a class="transition hover:text-gold" href="#services">Services</a><a class="transition hover:text-gold" href="#stories">Case studies</a><a class="transition hover:text-gold" href="#about">About us</a><a class="transition hover:text-gold" href="#contact">Contact</a>
+      </div>
+      <button id="menu-toggle" class="rounded-lg border border-white/15 p-2 text-slate-200 md:hidden" aria-label="Open menu">☰</button>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-[#090d19] px-5 pb-5 pt-3 md:hidden"><a class="block py-2 text-slate-300" href="#services">Services</a><a class="block py-2 text-slate-300" href="#stories">Case studies</a><a class="block py-2 text-slate-300" href="#about">About us</a><a class="block py-2 text-gold" href="#contact">Contact us →</a></div>
+  </header>
+
+  <main id="top">
+    <section class="grid-bg relative overflow-hidden pt-36 pb-20 lg:pt-48 lg:pb-32">
+      <div class="absolute -left-32 top-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl"></div><div class="absolute right-0 top-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[1.12fr_.88fr] lg:px-8">
+        <div class="reveal"><div class="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[.18em] text-gold"><span class="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_10px_#D4AF37]"></span> Romania · Europe · Asia</div>
+          <h1 class="max-w-3xl font-display text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.5rem]">Workforce without <span class="gold-text">borders.</span></h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">Bridging top-tier Asian skilled labor with growing European industries. Structured, compliant, and ethical international workforce coordination for European enterprises.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row"><a href="https://calendly.com/talentbridgeconsultancy/discovery-call" target="_blank" rel="noopener" class="rounded-full gold-gradient px-6 py-3.5 text-center font-semibold text-ink transition hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/20">Book a Discovery Call <span aria-hidden="true">↗</span></a><a href="#contact" class="rounded-full border border-slate-400 px-6 py-3.5 text-center font-semibold text-slate-700 transition hover:border-gold hover:text-gold">Request Skilled Workforce</a></div>
+          <p class="mt-10 flex items-center gap-2 text-sm text-slate-500"><span class="text-gold">✦</span> Bridging the Gap Between Dreams and Opportunities</p>
+        </div>
+        <div class="reveal relative"><div class="absolute -inset-4 rounded-[2rem] bg-gold/10 blur-2xl"></div><div class="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-3 shadow-2xl"><div id="field-carousel" class="relative h-[390px]"><div class="field-slide photo photo-one absolute inset-0 flex active flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · BUCHAREST</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">The right people move industries forward.</p></div><div class="field-slide photo photo-two absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · Employment</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Strong teams build stronger communities.</p></div><div class="field-slide photo photo-three absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · Workforce</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Every successful journey starts with trust.</p></div><div class="field-slide photo photo-four absolute inset-0 flex flex-col justify-end rounded-2xl p-6"><span class="mb-2 w-fit rounded-full border border-white/20 bg-black/30 px-3 py-1 text-xs text-white/80 backdrop-blur">FIELD NOTE · EMPOWERMENT</span><p class="max-w-xs font-display text-2xl font-medium text-yellow-300">Opportunity travels further together.</p></div></div><div class="flex items-center justify-between px-2 pt-4 text-xs text-slate-400"><span>Verified deployment network</span><span id="field-counter" class="text-gold">01 / 04</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="network-marquee overflow-hidden border-y border-white/10 bg-white/[.025] py-7"><div class="mx-auto flex max-w-7xl items-center gap-5 px-5 lg:px-8"><p class="z-10 whitespace-nowrap bg-white pr-4 text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Trusted network</p><div class="min-w-0 flex-1 overflow-hidden"><div class="network-track flex items-center gap-12 text-center"><div class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div><div aria-hidden="true" class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div></div></div></div></section>
+
+    <section id="services" class="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div class="reveal mb-12 max-w-2xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">What we do</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">A clear path from <span class="text-slate-400">potential</span> to performance.</h2></div><div class="grid gap-4 md:grid-cols-2">
+      <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1"><div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">⌁</div><h3 class="font-display text-2xl font-semibold">Sourcing & Recruitment Advisory</h3><p class="mt-3 leading-7 text-slate-600">Identifying and coordinating through verified manpower sourcing channels across Asia—so every shortlist starts with trust.</p><span class="mt-7 block text-sm font-semibold text-champagne">01 / Source with confidence</span></article>
+      <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1"><div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">✦</div><h3 class="font-display text-2xl font-semibold">Candidate Readiness & Training</h3><p class="mt-3 leading-7 text-slate-600">Pre-deployment screening, skill preparation, and workplace culture orientation for confident first days.</p><span class="mt-7 block text-sm font-semibold text-champagne">02 / Prepare for progress</span></article>
+      <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1"><div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">◇</div><h3 class="font-display text-2xl font-semibold">Documentation & Visa Guidance</h3><p class="mt-3 leading-7 text-slate-600">End-to-end support for visa processing, legal documentation, and compliance—transparent at every step.</p><span class="mt-7 block text-sm font-semibold text-champagne">03 / Move compliantly</span></article>
+      <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1"><div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">↗</div><h3 class="font-display text-2xl font-semibold">Deployment & Onboarding Coordination</h3><p class="mt-3 leading-7 text-slate-600">Cross-border mobility management, workplace integration, and thoughtful post-deployment follow-up.</p><span class="mt-7 block text-sm font-semibold text-champagne">04 / Settle for success</span></article>
+    </div></section>
+
+    <section id="stories" class="bg-[#111827] py-24 lg:py-32"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Proof of work</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">When people move, <span class="gold-text">possibility follows.</span></h2></div><p class="max-w-xs text-sm leading-6 text-slate-400">Real partnerships. Measurable outcomes. A human approach to every deployment.</p></div>
+      <div class="grid gap-5 lg:grid-cols-3"><article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-one h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Textile & apparel</p><h3 class="mt-3 text-xl font-semibold">Sonoma Sportswear SRL</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Severe skilled labor shortage in apparel production.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> Qualified garment technicians deployed with high retention and worker-safety compliance.</p></div></article>
+      <article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-two h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Construction & heavy industry</p><h3 class="mt-3 text-xl font-semibold">Ithaki Group SRL</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Reliable, pre-screened labor for large-scale projects.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> Managed channels and structured onboarding reduced deployment lead time.</p></div></article>
+      <article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-[#182233]"><div class="photo story-three h-52"></div><div class="p-6"><p class="text-xs uppercase tracking-[.15em] text-gold">Mobility & compliance</p><h3 class="mt-3 text-xl font-semibold">Beyond the paperwork</h3><p class="mt-4 text-sm leading-6 text-slate-400"><b class="text-slate-200">Challenge:</b> Complex visa logistics for multi-sector teams.</p><p class="mt-3 text-sm leading-6 text-slate-400"><b class="text-slate-200">Outcome:</b> 100% compliant processing with verified arrival and post-deployment support.</p></div></article></div>
+    </div></section>
+
+    <section class="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div class="reveal mb-10"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Where we make an impact</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Built for the industries <span class="text-slate-400">building tomorrow.</span></h2></div><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">⌂</span><h3 class="mt-10 font-semibold">Construction & Infrastructure</h3><p class="mt-2 text-sm text-slate-400">Skilled hands for ambitious builds.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">♧</span><h3 class="mt-10 font-semibold">Agriculture & Farming</h3><p class="mt-2 text-sm text-slate-400">Reliable teams for every season.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">◈</span><h3 class="mt-10 font-semibold">Food Processing</h3><p class="mt-2 text-sm text-slate-400">Quality-minded production talent.</p></div><div class="glass group rounded-2xl p-6 transition hover:border-gold/60"><span class="text-3xl">▥</span><h3 class="mt-10 font-semibold">Textile & Garment</h3><p class="mt-2 text-sm text-slate-400">Craftsmanship that scales.</p></div></div></section>
+
+    <section id="about" class="border-y border-white/10 bg-[#111827] py-24 lg:py-32"><div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8"><div class="reveal"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Our north star</p><h2 class="font-display text-4xl font-semibold leading-tight sm:text-5xl">We don't just fill roles. <span class="gold-text">We build futures.</span></h2><p class="mt-6 leading-8 text-slate-400">TalentBridge exists to make international work feel more human. We lead with ethical practice, radical transparency, worker welfare, and a firm commitment to protecting women in every workplace.</p><div class="mt-8 flex items-center gap-3 text-sm font-medium"><span class="text-gold">Source</span><span class="text-slate-600">➜</span><span>Vet & Prepare</span><span class="text-slate-600">➜</span><span>Deploy</span><span class="text-slate-600">➜</span><span>Onboard</span></div></div><div class="glass reveal rounded-2xl p-6"><p class="text-3xl font-semibold text-gold">4+</p><p class="mt-2 text-sm text-slate-400">Years coordinating international workforce mobility</p><div class="mt-8 border-t border-white/10 pt-5"><p class="font-semibold">Sayied Hassan</p><p class="mt-1 text-xs uppercase tracking-wider text-gold">Founder & Managing Director</p><p class="mt-3 text-sm leading-6 text-slate-400">An international operations leader bringing over six years of expertise in workforce coordination and global mobility. As Managing Director, he drives cross-border manpower sourcing, candidate preparation, ethical recruitment workflows, and visa process guidance, connecting Asian talent with European employment opportunities.</p></div></div></div></section>
+
+    <section id="contact" class="relative overflow-hidden py-24 lg:py-32"><div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(212,175,55,.12),transparent_38%)]"></div><div class="relative mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal max-w-2xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Start a conversation</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Your next chapter starts with a <span class="gold-text">Hello.</span></h2><p class="mt-5 text-slate-400">Tell us where you want to go. We'll help you find the people and the path to get there.</p></div>
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_.9fr]"><div class="reveal"><div class="mb-5 flex rounded-xl border border-white/10 bg-white/5 p-1"><button type="button" data-tab="employer" class="tab-btn flex-1 rounded-lg bg-gold px-3 py-3 text-sm font-semibold text-ink">I am a European Employer</button><button type="button" data-tab="partner" class="tab-btn flex-1 rounded-lg px-3 py-3 text-sm font-semibold text-slate-300">Sourcing partner / Candidate</button></div><form id="lead-form" name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="rounded-2xl border border-white/10 bg-white/[.045] p-6 sm:p-8"><input type="hidden" name="form-name" value="lead-form"><input type="hidden" name="bot-field"><div id="employer-fields"><label class="block text-sm text-slate-300">Company name<input name="company_name" required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-gold" placeholder="Your company"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Industry<select name="industry" class="mt-2 w-full rounded-lg border border-white/15 bg-[#111827] px-4 py-3 text-white outline-none focus:border-gold"><option>Construction</option><option>Food</option><option>Textile</option><option>Agriculture</option></select></label><label class="block text-sm text-slate-300">Location<input name="location" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="City, country"></label></div><label class="mt-4 block text-sm text-slate-300">Labor requirements<textarea name="labor_requirements" required class="mt-2 h-28 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Roles, skills, and team size"></textarea></label></div><div id="partner-fields" class="hidden"><label class="block text-sm text-slate-300">Partner / candidate name<input name="partner_name" data-partner-required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your name"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Region<input name="region" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="e.g. Bangladesh"></label><label class="block text-sm text-slate-300">Expertise<input name="expertise" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your skill"></label></div><label class="mt-4 block text-sm text-slate-300">Resume / document <span class="text-slate-500">(placeholder)</span><input name="resume_document" type="file" class="mt-2 block w-full rounded-lg border border-dashed border-white/20 bg-black/20 p-3 text-sm text-slate-400"></label></div><button type="submit" class="mt-6 w-full rounded-lg gold-gradient py-3.5 font-semibold text-ink transition hover:shadow-lg hover:shadow-gold/20">Send enquiry <span aria-hidden="true">↗</span></button><p id="form-message" class="mt-3 hidden text-center text-sm text-gold">Thanks — we'll be in touch shortly.</p></form></div><div class="reveal rounded-2xl border border-gold/25 bg-gold/[.06] p-7"><div class="flex items-start justify-between"><div><p class="text-xs uppercase tracking-[.18em] text-gold">Calendar</p><h3 class="mt-3 font-display text-2xl font-semibold">Let's put a date on it.</h3></div><span class="text-2xl text-gold">◷</span></div><p class="mt-4 text-sm leading-6 text-slate-400">Choose a time that works for you. Our interactive booking experience is coming soon.</p><div class="mt-8 grid grid-cols-7 gap-1 text-center text-xs text-slate-500"><span class="p-2">M</span><span class="p-2">T</span><span class="p-2">W</span><span class="p-2">T</span><span class="p-2">F</span><span class="p-2">S</span><span class="p-2">S</span><span></span><span></span><span class="rounded bg-gold/20 p-2 text-gold">1</span><span class="p-2">2</span><span class="p-2">3</span><span class="p-2">4</span><span class="p-2">5</span><span class="p-2">6</span><span class="p-2">7</span><span class="p-2">8</span><span class="p-2">9</span><span class="p-2">10</span><span class="p-2">11</span><span class="p-2">12</span><span class="p-2">13</span><span class="p-2">14</span><span class="p-2">15</span><span class="p-2">16</span><span class="p-2">17</span><span class="p-2">18</span><span class="p-2">19</span><span class="p-2">20</span><span class="p-2">21</span></div><div id="google-calendar-scheduler" class="mt-8"></div></div></div></div>
+    </section>
+  </main>
+  <a href="https://wa.me/40752329745?text=Hello%20TalentBridge%20Consultancy%2C%20I%27d%20like%20to%20learn%20more." target="_blank" rel="noopener" aria-label="Chat with TalentBridge Consultancy on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:bg-[#20bd5a]"><span class="text-lg">◉</span> WhatsApp us</a>
+  <footer id="site-footer" class="border-t border-white/10 bg-[#070a12]"><div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-9 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div><p class="font-display text-base font-semibold text-slate-200">Talent<span class="text-gold">Bridge</span> Consultancy</p><p class="mt-1">Bridging the Gap Between Dreams and Opportunities.</p></div><div class="sm:text-right"><a class="block text-slate-300 transition hover:text-gold" href="mailto:contact@talentbridgeconsultancy.net">contact@talentbridgeconsultancy.net</a><a class="mt-1 block text-slate-300 transition hover:text-[#25D366]" href="https://wa.me/40752329745" target="_blank" rel="noopener">WhatsApp: +40 752 329 745</a><p class="mt-1">Romania · © 2024 TalentBridge Consultancy</p><p class="mt-1 text-xs">Consultancy and advisory services only. Not a legal or immigration authority.</p></div></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle'), mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    const employerFields = document.getElementById('employer-fields'), partnerFields = document.getElementById('partner-fields');
+    document.querySelectorAll('.tab-btn').forEach(button => button.addEventListener('click', () => {
+      const isEmployer = button.dataset.tab === 'employer';
+      employerFields.classList.toggle('hidden', !isEmployer);
+      partnerFields.classList.toggle('hidden', isEmployer);
+      employerFields.querySelectorAll('[required]').forEach(field => field.required = isEmployer);
+      partnerFields.querySelector('[data-partner-required]').required = !isEmployer;
+    }));
+    const fieldSlides = document.querySelectorAll('.field-slide'), fieldCounter = document.getElementById('field-counter');
+    let currentSlide = 0;
+    setInterval(() => {
+      fieldSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % fieldSlides.length;
+      fieldSlides[currentSlide].classList.add('active');
+      fieldCounter.textContent = `0${currentSlide + 1} / 04`;
+    }, 4500);
+    document.querySelectorAll('.tab-btn').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('bg-gold', 'text-ink'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.add('text-slate-300'));
+      button.classList.add('bg-gold', 'text-ink'); button.classList.remove('text-slate-300');
+      const isEmployer = button.dataset.tab === 'employer'; employerFields.classList.toggle('hidden', !isEmployer); partnerFields.classList.toggle('hidden', isEmployer);
+    }));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const whatsappButton = document.querySelector('a[aria-label*="WhatsApp"]');
+    const footerObserver = new IntersectionObserver(([entry]) => {
+      whatsappButton.classList.toggle('hidden', entry.isIntersecting);
+    }, { threshold: 0.05 });
+    footerObserver.observe(document.getElementById('site-footer'));
+
+    const calendarTarget = document.getElementById('google-calendar-scheduler');
+    const googleCalendarCss = document.createElement('link');
+    googleCalendarCss.rel = 'stylesheet';
+    googleCalendarCss.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+    document.head.appendChild(googleCalendarCss);
+
+    const googleCalendarScript = document.createElement('script');
+    googleCalendarScript.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+    googleCalendarScript.async = true;
+    document.head.appendChild(googleCalendarScript);
+
+    const leadForm = document.getElementById('lead-form');
+    if (leadForm) {
+      leadForm.addEventListener('submit', function(event) {
+        if (window.location.protocol === 'file:') {
+          event.preventDefault();
+          const formData = new FormData(leadForm);
+          const name = formData.get('company_name') || formData.get('partner_name') || 'TalentBridge enquiry';
+          const subject = encodeURIComponent('New TalentBridge website enquiry');
+          const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Company: ' + (formData.get('company_name') || '') + '\n' +
+            'Industry: ' + (formData.get('industry') || '') + '\n' +
+            'Location: ' + (formData.get('location') || '') + '\n' +
+            'Labor requirements: ' + (formData.get('labor_requirements') || '') + '\n' +
+            'Region: ' + (formData.get('region') || '') + '\n' +
+            'Expertise: ' + (formData.get('expertise') || '') + '\n' +
+            'Resume / document: ' + (formData.get('resume_document') ? 'Attached file selected' : 'Not provided')
+          );
+          window.location.href = `mailto:contact@talentbridgeconsultancy.net?subject=${subject}&body=${body}`;
+          return;
+        }
+
+        const successMessage = document.getElementById('form-message');
+        if (successMessage) {
+          successMessage.classList.remove('hidden');
+          successMessage.textContent = 'Thanks — your enquiry has been received. We will be in touch shortly.';
+        }
+      });
+    }
+
+    window.addEventListener('load', function() {
+      if (calendarTarget && window.calendar && window.calendar.schedulingButton) {
+        window.calendar.schedulingButton.load({
+          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2amTluJSSfptfTxrgwooCeEXnEkYsvA_xoD4icVOhOuGzSrMPjHrFsT6DDh5ikwReuMUwsyUSf?gv=true',
+          color: '#039BE5',
+          label: 'Book an appointment',
+          target: calendarTarget,
+        });
+      }
+    });
+  </script>
+</body>
+</html>

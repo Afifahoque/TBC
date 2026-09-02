@@ -69,7 +69,7 @@
       box-shadow: 0 24px 60px rgba(15,23,42,.08);
       opacity: 0;
       transform: translateY(var(--offset-steps)) scale(.92);
-      transition: all .6s ease;
+      transition: transform 1.25s cubic-bezier(.22,1,.36,1), opacity 1.25s ease, box-shadow 1.25s ease;
       pointer-events: none;
       background: white;
     }
@@ -78,6 +78,7 @@
       transform: translateY(0) scale(1);
       pointer-events: auto;
       z-index: 3;
+      box-shadow: 0 28px 80px rgba(15,23,42,.14), 0 0 0 1px rgba(212,175,55,.22);
     }
     .visa-stack .visa-card.prev {
       opacity: .68;
@@ -96,6 +97,12 @@
       background-position: center;
       width: 100%;
       height: 100%;
+      transition: transform 1.5s cubic-bezier(.22,1,.36,1), filter 1.5s ease;
+      filter: saturate(1.05) contrast(1.03);
+    }
+    .visa-stack .visa-card.active .visa-card-image {
+      transform: scale(1.04);
+      filter: saturate(1.15) contrast(1.05);
     }
     .visa-card::after {
       content: "";
@@ -207,7 +214,9 @@
       </div>
     </section>
 
-    <section class="network-marquee overflow-hidden border-y border-white/10 bg-white/[.025] py-7"><div class="mx-auto flex max-w-7xl items-center gap-5 px-5 lg:px-8"><p class="z-10 whitespace-nowrap bg-white pr-4 text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Trusted Leading Companies</p><div class="min-w-0 flex-1 overflow-hidden"><div class="network-track flex items-center gap-12 text-center"><div class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div><div aria-hidden="true" class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div></div></div></div></section>
+    <section class="network-marquee overflow-hidden border-y border-white/10 bg-white/[.025] py-7"><div class="mx-auto flex max-w-7xl items-center gap-5 px-5 lg:px-8"><p class="z-10 whitespace-nowrap bg-white pr-4 text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Trusted by Leading Companies</p><div class="min-w-0 flex-1 overflow-hidden"><div class="network-track flex items-center gap-12 text-center"><div class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div><div aria-hidden="true" class="flex shrink-0 items-center gap-12"><span class="text-sm font-semibold text-[#123b67]">ITHAKI <i class="font-normal text-[#315b85]">GROUP SRL</i></span><span class="text-sm font-semibold text-[#123b67]">SONOMA <i class="font-normal text-[#315b85]">SPORTSWEAR SRL</i></span><span class="text-sm font-semibold text-[#123b67]">RNR <i class="font-normal text-[#315b85]">HR CONSULTANCY</i></span><span class="text-sm font-semibold text-gold">+ Partner network</span></div></div></div></div></section>
+
+    <section id="why-us" class="bg-[#f8fafc] py-24 lg:py-32"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal mb-12 max-w-3xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Why TalentBridge</p><h2 class="font-display text-4xl font-semibold tracking-tight text-[#0f172a] sm:text-5xl">A hiring partner built for compliance, speed, and long-term trust.</h2></div><div class="grid gap-5 lg:grid-cols-[1.1fr_1.9fr]"><div class="reveal rounded-3xl border border-[#e2e8f0] bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.04)]"><p class="text-sm leading-7 text-slate-600">If you are an employer in Europe, we can source, prepare, and deploy the right workforce for your operations without risking compliance, quality, or worker welfare.</p><div class="mt-8 space-y-3"><div class="flex items-center gap-3 rounded-xl bg-[#fffaf0] px-4 py-3 text-sm font-medium text-[#123b67]"><span class="text-lg text-gold">✓</span> Ethical and transparent recruitment flows</div><div class="flex items-center gap-3 rounded-xl bg-[#fffaf0] px-4 py-3 text-sm font-medium text-[#123b67]"><span class="text-lg text-gold">✓</span> Skilled labor aligned to your project needs</div><div class="flex items-center gap-3 rounded-xl bg-[#fffaf0] px-4 py-3 text-sm font-medium text-[#123b67]"><span class="text-lg text-gold">✓</span> End-to-end documentation and onboarding support</div></div></div>    <div class="grid gap-4 md:grid-cols-3"><article class="reveal glow rounded-2xl bg-white p-6 text-[#0f172a]"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#fef3c7] text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M8 18V8m8 10V6M4 18h16M6 8h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="font-display text-2xl font-semibold">Trusted Sourcing</h3><p class="mt-3 text-sm leading-6 text-slate-600">We identify and coordinate verified manpower channels from Asia with a clear focus on quality and readiness.</p></article><article class="reveal glow rounded-2xl bg-white p-6 text-[#0f172a]"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#fef3c7] text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M12 3l7 3v6c0 4-2.7 7.7-7 9-4.3-1.3-7-5-7-9V6l7-3zm0 5v4m0 4h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="font-display text-2xl font-semibold">Compliance First</h3><p class="mt-3 text-sm leading-6 text-slate-600">Our process reduces risk through proper documentation, legal coordination, and transparent visa management.</p></article><article class="reveal glow rounded-2xl bg-white p-6 text-[#0f172a]"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#fef3c7] text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M4 16l5-5 3 3 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 6h2v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3 class="font-display text-2xl font-semibold">Deployment Support</h3><p class="mt-3 text-sm leading-6 text-slate-600">We stay connected beyond arrival to support onboarding, worker integration, and operational continuity.</p></article></div></div></div></section>
 
   <section id="services" class="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
   <div class="reveal mb-12 max-w-2xl">
@@ -218,7 +227,7 @@
   <div class="grid gap-4 md:grid-cols-2">
     <!-- 01 -->
     <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1">
-      <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">⌁</div>
+          <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M7 19V7m10 12V5m-14 14h16M5 9h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <h3 class="font-display text-2xl font-semibold">Sourcing & Recruitment Advisory</h3>
       <p class="mt-3 leading-7 text-slate-600">Identifying and vetting talent across Asian markets through ethical sourcing channels. We conduct one-on-one worker consultations to assess true skill levels, manage employer expectations, and build transparent shortlists grounded in mutual trust.</p>
       <span class="mt-7 block text-sm font-semibold text-champagne">01 / Source with confidence</span>
@@ -226,15 +235,15 @@
 
     <!-- 02 -->
     <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1">
-      <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">✦</div>
+          <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M12 3v6m0 6v6M3 12h6m6 0h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.7"/></svg></div>
       <h3 class="font-display text-2xl font-semibold">Candidate Readiness & Training</h3>
-      <p class="mt-3 leading-7 text-slate-600">Comprehensive pre-deployment preparation including technical skill alignment, language basics, and cross-cultural workplace orientation—ensuring candidates enter European work environments fully prepared and confident from day one.</p>
+      <p class="mt-3 leading-7 text-slate-600">Comprehensive pre-deployment preparation including technical skill alignment, language basics, and cross-cultural workplace orientation,ensuring candidates enter European work environments fully prepared and confident from day one.</p>
       <span class="mt-7 block text-sm font-semibold text-champagne">02 / Prepare for progress</span>
     </article>
 
     <!-- 03 -->
     <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1">
-      <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">◇</div>
+          <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M7 4h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1v5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13h8M8 17h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       <h3 class="font-display text-2xl font-semibold">Documentation & Visa Guidance</h3>
       <p class="mt-3 leading-7 text-slate-600">Navigating complex international employment law with precision. We manage work permits, embassy submissions, and legal documentation end-to-end to maintain complete compliance and prevent processing delays.</p>
       <span class="mt-7 block text-sm font-semibold text-champagne">03 / Move compliantly</span>
@@ -242,7 +251,7 @@
 
     <!-- 04 -->
     <article class="glow reveal rounded-2xl bg-white p-7 text-ink transition hover:-translate-y-1">
-      <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-2xl text-gold">↗</div>
+          <div class="icon-box mb-8 flex h-12 w-12 items-center justify-center rounded-xl text-gold"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M4 15l6-6 4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h4v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       <h3 class="font-display text-2xl font-semibold">Deployment & Onboarding Coordination</h3>
       <p class="mt-3 leading-7 text-slate-600">Full mobility logistics management from travel arrangements to initial arrival. We provide ongoing post-deployment check-ins and support to protect worker dignity and ensure long-term retention for employers.</p>
       <span class="mt-7 block text-sm font-semibold text-champagne">04 / Settle for success</span>
@@ -264,8 +273,10 @@
 
     <section id="about" class="border-y border-white/10 bg-[#111827] py-24 lg:py-32"><div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8"><div class="reveal"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Our north star</p><h2 class="font-display text-4xl font-semibold leading-tight sm:text-5xl">We don't just fill roles. <span class="gold-text">We build futures.</span></h2><p class="mt-6 leading-8 text-slate-400">TalentBridge exists to make international work feel more human. We lead with ethical practice, radical transparency, worker welfare, and a firm commitment to protecting women in every workplace.</p><div class="mt-8 flex items-center gap-3 text-sm font-medium"><span class="text-gold">Source</span><span class="text-slate-600">➜</span><span>Vet & Prepare</span><span class="text-slate-600">➜</span><span>Deploy</span><span class="text-slate-600">➜</span><span>Onboard</span></div></div><div class="glass reveal rounded-2xl p-6"><div class="flex items-center gap-4"><img src="sayeid.jpg" alt="Sayied Hassan" class="h-20 w-20 rounded-full object-cover ring-2 ring-gold/40 ring-offset-2 ring-offset-[#111827] shadow-[0_0_18px_rgba(212,175,55,0.25)]"><div><p class="text-3xl font-semibold text-gold">4+</p><p class="mt-1 text-sm text-slate-400">Years coordinating international workforce mobility</p></div></div><div class="mt-8 border-t border-white/10 pt-5"><p class="font-semibold">Sayied Hassan</p><p class="mt-1 text-xs uppercase tracking-wider text-gold">Founder & Managing Director</p><p class="mt-3 text-sm leading-6 text-slate-400">An international operations leader bringing over six years of expertise in workforce coordination and global mobility. As Managing Director, he drives cross-border manpower sourcing, candidate preparation, ethical recruitment workflows, and visa process guidance, connecting Asian talent with European employment opportunities.</p></div></div></div></section>
 
+    <section id="faq" class="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div class="reveal mb-12 max-w-2xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">FAQ</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Questions employers and partners often ask.</h2></div><div class="grid gap-4 md:grid-cols-2"><div class="reveal rounded-2xl border border-white/10 bg-[#0f172a] p-6"><h3 class="font-display text-2xl font-semibold text-white">How do you source candidates?</h3><p class="mt-3 text-sm leading-7 text-slate-300">We work through verified cross-border recruitment channels and structured candidate screening to ensure the workforce is suitable, ready, and aligned with employer requirements.</p></div><div class="reveal rounded-2xl border border-white/10 bg-[#0f172a] p-6"><h3 class="font-display text-2xl font-semibold text-white">How do you handle compliance?</h3><p class="mt-3 text-sm leading-7 text-slate-300">Our model prioritizes transparent documentation, visa coordination, worker welfare, and clear onboarding procedures to reduce legal and operational risk.</p></div><div class="reveal rounded-2xl border border-white/10 bg-[#0f172a] p-6"><h3 class="font-display text-2xl font-semibold text-white">Can employers request specific roles?</h3><p class="mt-3 text-sm leading-7 text-slate-300">Yes. We work closely with employers to define staffing requirements, skill profiles, and deployment timing before sourcing and preparation begins.</p></div><div class="reveal rounded-2xl border border-white/10 bg-[#0f172a] p-6"><h3 class="font-display text-2xl font-semibold text-white">Do you support onboarding after arrival?</h3><p class="mt-3 text-sm leading-7 text-slate-300">Absolutely. We support arrival coordination, workplace integration, and follow-up communication to improve retention and performance.</p></div></div></section>
+
     <section id="contact" class="relative overflow-hidden py-24 lg:py-32"><div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(212,175,55,.12),transparent_38%)]"></div><div class="relative mx-auto max-w-7xl px-5 lg:px-8"><div class="reveal max-w-2xl"><p class="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-gold">Start a conversation</p><h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Your next chapter starts with a <span class="gold-text">Hello.</span></h2><p class="mt-5 text-slate-400">Tell us where you want to go. We'll help you find the people and the path to get there.</p></div>
-      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_.9fr]"><div class="reveal"><div class="mb-5 flex rounded-xl border border-white/10 bg-white/5 p-1"><button type="button" data-tab="employer" class="tab-btn flex-1 rounded-lg bg-gold px-3 py-3 text-sm font-semibold text-ink">I am a European Employer</button><button type="button" data-tab="partner" class="tab-btn flex-1 rounded-lg px-3 py-3 text-sm font-semibold text-slate-300">Sourcing partner / Candidate</button></div><form id="lead-form" name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="rounded-2xl border border-white/10 bg-white/[.045] p-6 sm:p-8"><input type="hidden" name="form-name" value="lead-form"><input type="hidden" name="bot-field"><div id="employer-fields"><label class="block text-sm text-slate-300">Company name<input name="company_name" required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-gold" placeholder="Your company"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Industry<select name="industry" class="mt-2 w-full rounded-lg border border-white/15 bg-[#111827] px-4 py-3 text-white outline-none focus:border-gold"><option>Construction</option><option>Food</option><option>Textile</option><option>Agriculture</option></select></label><label class="block text-sm text-slate-300">Location<input name="location" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="City, country"></label></div><label class="mt-4 block text-sm text-slate-300">Labor requirements<textarea name="labor_requirements" required class="mt-2 h-28 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Roles, skills, and team size"></textarea></label></div><div id="partner-fields" class="hidden"><label class="block text-sm text-slate-300">Partner / candidate name<input name="partner_name" data-partner-required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your name"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Region<input name="region" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="e.g. Bangladesh"></label><label class="block text-sm text-slate-300">Expertise<input name="expertise" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your skill"></label></div><label class="mt-4 block text-sm text-slate-300">Resume / document <span class="text-slate-500">(placeholder)</span><input name="resume_document" type="file" class="mt-2 block w-full rounded-lg border border-dashed border-white/20 bg-black/20 p-3 text-sm text-slate-400"></label></div><button type="submit" class="mt-6 w-full rounded-lg gold-gradient py-3.5 font-semibold text-ink transition hover:shadow-lg hover:shadow-gold/20">Send enquiry <span aria-hidden="true">↗</span></button><p id="form-message" class="mt-3 hidden text-center text-sm text-gold">Thanks — we'll be in touch shortly.</p></form></div><div class="reveal rounded-2xl border border-gold/25 bg-gold/[.06] p-7"><div class="flex items-start justify-between"><div><p class="text-xs uppercase tracking-[.18em] text-gold">Calendar</p><h3 class="mt-3 font-display text-2xl font-semibold">Let's put a date on it.</h3></div><span class="text-2xl text-gold">◷</span></div><p class="mt-4 text-sm leading-6 text-slate-400">Choose a time that works for you. Our interactive booking experience is coming soon.</p><div class="mt-8 grid grid-cols-7 gap-1 text-center text-xs text-slate-500"><span class="p-2">M</span><span class="p-2">T</span><span class="p-2">W</span><span class="p-2">T</span><span class="p-2">F</span><span class="p-2">S</span><span class="p-2">S</span><span></span><span></span><span class="rounded bg-gold/20 p-2 text-gold">1</span><span class="p-2">2</span><span class="p-2">3</span><span class="p-2">4</span><span class="p-2">5</span><span class="p-2">6</span><span class="p-2">7</span><span class="p-2">8</span><span class="p-2">9</span><span class="p-2">10</span><span class="p-2">11</span><span class="p-2">12</span><span class="p-2">13</span><span class="p-2">14</span><span class="p-2">15</span><span class="p-2">16</span><span class="p-2">17</span><span class="p-2">18</span><span class="p-2">19</span><span class="p-2">20</span><span class="p-2">21</span></div><div id="google-calendar-scheduler" class="mt-8"></div></div></div></div>
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_.9fr]"><div class="reveal"><div class="mb-5 flex rounded-xl border border-white/10 bg-white/5 p-1"><button type="button" data-tab="employer" class="tab-btn flex-1 rounded-lg bg-gold px-3 py-3 text-sm font-semibold text-ink">I am a European Employer</button><button type="button" data-tab="partner" class="tab-btn flex-1 rounded-lg px-3 py-3 text-sm font-semibold text-slate-300">Sourcing partner / Candidate</button></div><form id="lead-form" name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="rounded-2xl border border-white/10 bg-white/[.045] p-6 sm:p-8"><input type="hidden" name="form-name" value="lead-form"><input type="hidden" name="bot-field"><div id="employer-fields"><label class="block text-sm text-slate-300">Company name<input name="company_name" required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-gold" placeholder="Your company"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Industry<select name="industry" class="mt-2 w-full rounded-lg border border-white/15 bg-[#111827] px-4 py-3 text-white outline-none focus:border-gold"><option>Construction</option><option>Food</option><option>Textile</option><option>Agriculture</option></select></label><label class="block text-sm text-slate-300">Location<input name="location" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="City, country"></label></div><label class="mt-4 block text-sm text-slate-300">Labor requirements<textarea name="labor_requirements" required class="mt-2 h-28 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Roles, skills, and team size"></textarea></label></div><div id="partner-fields" class="hidden"><label class="block text-sm text-slate-300">Partner / candidate name<input name="partner_name" data-partner-required class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your name"></label><div class="mt-4 grid gap-4 sm:grid-cols-2"><label class="block text-sm text-slate-300">Region<input name="region" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="e.g. Bangladesh"></label><label class="block text-sm text-slate-300">Expertise<input name="expertise" class="mt-2 w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-white outline-none focus:border-gold" placeholder="Your skill"></label></div><label class="mt-4 block text-sm text-slate-300">Resume / document <span class="text-slate-500">(placeholder)</span><input name="resume_document" type="file" class="mt-2 block w-full rounded-lg border border-dashed border-white/20 bg-black/20 p-3 text-sm text-slate-400"></label></div><button type="submit" class="mt-6 w-full rounded-lg gold-gradient py-3.5 font-semibold text-ink transition hover:shadow-lg hover:shadow-gold/20">Send enquiry <span aria-hidden="true">↗</span></button><p id="form-message" class="mt-3 hidden text-center text-sm text-gold">Thanks — we'll be in touch shortly.</p></form></div><div class="reveal rounded-2xl border border-gold/25 bg-gold/[.06] p-7"><div class="flex items-start justify-between"><div><p class="text-xs uppercase tracking-[.18em] text-gold">Calendar</p><h3 class="mt-3 font-display text-2xl font-semibold">Let's put a date on it.</h3></div><span class="text-2xl text-gold">◷</span></div><p class="mt-4 text-sm leading-6 text-slate-400">Choose a time that works for you. For the best mobile experience, the appointment page opens in a full-size browser window.</p><div class="mt-8 grid grid-cols-7 gap-1 text-center text-xs text-slate-500"><span class="p-2">M</span><span class="p-2">T</span><span class="p-2">W</span><span class="p-2">T</span><span class="p-2">F</span><span class="p-2">S</span><span class="p-2">S</span><span></span><span></span><span class="rounded bg-gold/20 p-2 text-gold">1</span><span class="p-2">2</span><span class="p-2">3</span><span class="p-2">4</span><span class="p-2">5</span><span class="p-2">6</span><span class="p-2">7</span><span class="p-2">8</span><span class="p-2">9</span><span class="p-2">10</span><span class="p-2">11</span><span class="p-2">12</span><span class="p-2">13</span><span class="p-2">14</span><span class="p-2">15</span><span class="p-2">16</span><span class="p-2">17</span><span class="p-2">18</span><span class="p-2">19</span><span class="p-2">20</span><span class="p-2">21</span></div><a id="calendar-book-link" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2amTluJSSfptfTxrgwooCeEXnEkYsvA_xoD4icVOhOuGzSrMPjHrFsT6DDh5ikwReuMUwsyUSf?gv=true" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex w-full items-center justify-center rounded-xl gold-gradient px-5 py-3.5 text-sm font-semibold text-ink shadow-[0_15px_35px_rgba(212,175,55,0.25)] transition hover:-translate-y-0.5">Book an appointment <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
   </main>
   <a href="https://wa.me/40752329745?text=Hello%20TalentBridge%20Consultancy%2C%20I%27d%20like%20to%20learn%20more." target="_blank" rel="noopener" aria-label="Chat with TalentBridge Consultancy on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:bg-[#20bd5a]"><span class="text-lg">◉</span> WhatsApp us</a>
@@ -300,17 +311,29 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     const visaGallery = [
-      { src: 'visa/visa-1.jpg' },
-      { src: 'visa/visa-2.jpg' },
-      { src: 'visa/visa-3.jpg' },
-      { src: 'visa/visa-4.jpg' },
-      { src: 'visa/visa-5.jpg' },
-      { src: 'visa/visa-6.jpg' },
-      { src: 'visa/visa-7.jpg' },
-      { src: 'visa/visa-8.jpg' },
-      { src: 'visa/visa-9.jpg' }
-    
-    ];
+      'visa/visa-1.jpg',
+      'visa/visa-1.jpeg',
+      'visa/visa-2.jpg',
+      'visa/visa-2.jpeg',
+      'visa/visa-3.jpg',
+      'visa/visa-4.jpg',
+      'visa/visa-5.jpg',
+      'visa/visa-6.jpg',
+      'visa/visa-7.jpg',
+      'visa/visa-8.jpg',
+      'visa/visa-9.jpg',
+      'visa/visa10.jpg',
+      'visa/visa-11.jpg',
+      'visa/visa-12.jpg',
+      'visa/visa-13.jpg',
+      'visa/visa-14.jpg',
+      'visa/visa-15.jpg',
+      'visa/visa-16.jpg',
+      'visa/visa-16.jpeg',
+      'visa/visa-18.jpg',
+      'visa/visa-19.jpeg'
+    ].filter((src, index, arr) => arr.indexOf(src) === index).map(src => ({ src }));
+
     const visaStack = document.getElementById('visa-stack');
     if (visaStack) {
       visaGallery.forEach((item, index) => {
@@ -321,12 +344,7 @@
         image.className = 'visa-card-image';
         image.style.backgroundImage = `url('${item.src}')`;
 
-        const label = document.createElement('span');
-        label.className = 'visa-card-label';
-        label.textContent = item.label;
-
         card.appendChild(image);
-        card.appendChild(label);
         visaStack.appendChild(card);
       });
 
@@ -344,7 +362,7 @@
       };
 
       rotateVisaCards();
-      setInterval(rotateVisaCards, 3400);
+      setInterval(rotateVisaCards, 5400);
     }
 
     const whatsappButton = document.querySelector('a[aria-label*="WhatsApp"]');
@@ -353,16 +371,15 @@
     }, { threshold: 0.05 });
     footerObserver.observe(document.getElementById('site-footer'));
 
-    const calendarTarget = document.getElementById('google-calendar-scheduler');
-    const googleCalendarCss = document.createElement('link');
-    googleCalendarCss.rel = 'stylesheet';
-    googleCalendarCss.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
-    document.head.appendChild(googleCalendarCss);
-
-    const googleCalendarScript = document.createElement('script');
-    googleCalendarScript.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
-    googleCalendarScript.async = true;
-    document.head.appendChild(googleCalendarScript);
+    const calendarBookLink = document.getElementById('calendar-book-link');
+    if (calendarBookLink) {
+      calendarBookLink.addEventListener('click', function(event) {
+        if (window.innerWidth < 768) {
+          event.preventDefault();
+          window.open(calendarBookLink.href, '_blank', 'width=1200,height=950,noopener,noreferrer');
+        }
+      });
+    }
 
     const leadForm = document.getElementById('lead-form');
     if (leadForm) {
@@ -394,16 +411,6 @@
       });
     }
 
-    window.addEventListener('load', function() {
-      if (calendarTarget && window.calendar && window.calendar.schedulingButton) {
-        window.calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2amTluJSSfptfTxrgwooCeEXnEkYsvA_xoD4icVOhOuGzSrMPjHrFsT6DDh5ikwReuMUwsyUSf?gv=true',
-          color: '#039BE5',
-          label: 'Book an appointment',
-          target: calendarTarget,
-        });
-      }
-    });
   </script>
 </body>
 </html>
